@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+       function Information (id, name, phone, address){
+        this.id = id;
+        this.name = name;
+        this.phone = phone;
+        this.address = address;
+       }
+       let information = new Information;
+       information.id = +prompt("Nhập vào id");
+       information.name = prompt("Nhập vào name");
+       information.phone = +prompt("Nhập vào phone");
+       information.address = prompt("Nhập vào address");
+
+       console.log(information);
+    </script>
+</body>
+</html>

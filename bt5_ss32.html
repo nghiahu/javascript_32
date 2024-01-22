@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class Book {
+        constructor(author, name) {
+            this.author = author;
+            this.name = name;
+        }
+        }
+        let books = [
+        new Book("J.K. Rowling", "Harry Potter"),
+        new Book("George R.R. Martin", "A Song of Ice and Fire"),
+        new Book("J.R.R. Tolkien", "The Lord of the Rings")
+        ];
+        let auth = prompt("Nhập tên tác giả:");
+        let found = false;
+        for (let book of books) {
+        if (book.author === auth) {
+            console.log(book);
+            found = true;
+            break;
+        }
+        }
+        if (!found) {
+        console.log("Không tìm thấy sách");
+        }
+    </script>
+</body>
+</html>

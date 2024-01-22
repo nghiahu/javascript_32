@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let person = {
+            name: "Nam",
+            age: 18,
+            address: "Hà Đông",
+        };
+        console.log("Trước");
+        console.log(person);
+        person.birthDate = "21/04/2005";
+        delete person.age;
+        console.log("Sau");
+        console.log(person);
+    </script>
+</body>
+</html>

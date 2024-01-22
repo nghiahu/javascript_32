@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let Students = [];
+        let n = +prompt("Nhập vào số học sinh");
+        for(let i = 0; i < n ; i++){
+            let student = {
+                id: +prompt("Nhập id"),
+                name: prompt("Nhập tên"),
+            }
+             Students.push(student);
+        } 
+        console.log(Students);
+    </script>
+</body>
+</html>

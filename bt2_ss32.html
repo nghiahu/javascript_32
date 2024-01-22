@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let Information = {
+            id: 1,
+            name: "Nam",
+            phone: '12345',
+            address: "Hà Nội",
+        };
+        console.log("Trước khi sửa" );
+        console.log(Information);
+        delete Information.address;
+        
+        Information.email = "nam@gmail.com";
+        console.log("Sau khi sửa" );
+        console.log(Information);
+    </script>
+</body>
+</html>

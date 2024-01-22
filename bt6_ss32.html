@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let products = [
+            { id: 1, product_name: "Laptop", price: 245 },
+            { id: 2, product_name: "Phone", price: 165 },
+            { id: 3, product_name: "Book", price: 100 },
+            { id: 4, product_name: "Pen", price: 43 }
+            ];
+        function arrange(products) {
+            const sortedProducts = products.sort((a, b) => a.price - b.price);
+            sortedProducts.forEach(product => {
+            });
+        }
+        
+        arrange(products);
+        console.log("Sau sắp xếp");
+        console.log(products);
+    </script>
+</body>
+</html>

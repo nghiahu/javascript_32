@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class Book {
+            constructor(title, author, publishedYear) {
+                this.title = title;
+                this.author = author;
+                this.publishedYear = publishedYear;
+                this.isAvailable = true; 
+            }
+            displayInfo() {
+                console.log(`Title: ${this.title}, Author: ${this.author}, Published Year: ${this.publishedYear}, Available: ${this.isAvailable ? 'Yes' : 'No'}`);
+            }
+            borrow() {
+                if (this.isAvailable) {
+                    this.isAvailable = false;
+                    console.log(`Book "${this.title}" has been borrowed.`);
+                } else {
+                    console.log(`Book "${this.title}" is not available for borrowing.`);
+                }
+            }
+            returnBook() {
+                if (!this.isAvailable) {
+                    this.isAvailable = true;
+                    console.log(`Book "${this.title}" has been returned.`);
+                } else {
+                    console.log(`Book "${this.title}" is already available.`);
+                }
+            }
+        }
+        class Library {
+            constructor() {
+                this.books = [];
+            }
+            addBook(book) {
+                this.books.push(book);
+            }
+            displayLibrary() {
+                console.log("Library Books:");
+                this.books.forEach(book => {
+                    book.displayInfo();
+                });
+            }
+            isBookAvailable(title) {
+                const book = this.books.find(book => book.title === title);
+                if (book) {
+                    return book.isAvailable;
+                }
+                return false;
+            }
+        }
+        const library = new Library();
+        library.addBook(new Book("The Great Gatsby", "F. Scott Fitzgerald", 1925));
+        library.addBook(new Book("To Kill a Mockingbird", "Harper Lee", 1960));
+        library.addBook(new Book("1984", "George Orwell", 1949));
+        library.displayLibrary();
+        const bookToBorrow = "To Kill a Mockingbird";
+        if (library.isBookAvailable(bookToBorrow)) {
+            const book = library.books.find(book => book.title === bookToBorrow);
+            book.borrow();
+        }
+        const bookToReturn = "To Kill a Mockingbird";
+        const book = library.books.find(book => book.title === bookToReturn);
+        book.returnBook();
+        const bookToCheck = "The Great Gatsby";
+        console.log(`Is "${bookToCheck}" available for borrowing? ${library.isBookAvailable(bookToCheck) ? 'Yes' : 'No'}`);
+
+    </script>
+</body>
+</html>
